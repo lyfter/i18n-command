@@ -22,6 +22,8 @@ class BladeGettextExtractor extends \Gettext\Extractors\PhpCode {
 		$cache_path     = empty( $options['cachePath'] ) ? sys_get_temp_dir() : $options['cachePath'];
 		$blade_compiler = new BladeOne( null, $cache_path );
 
+		BladeDirectives::register( $blade_compiler );
+
 		if ( method_exists( $blade_compiler, 'withoutComponentTags' ) ) {
 			$blade_compiler->withoutComponentTags();
 		}
