@@ -3113,7 +3113,7 @@ Feature: Generate a POT file of a WordPress project
         @t( 'This is a custom directive', 'foo-theme' )
       """
 
-    When I try `wp i18n make-pot foo-theme --blade-directives=t result.pot --debug`
+    When I try `wp i18n make-pot foo-theme result.pot --debug`
     Then STDOUT should be:
       """
       Theme stylesheet detected.
