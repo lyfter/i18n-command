@@ -659,6 +659,7 @@ class MakePotCommand extends WP_CLI_Command {
 					'extensions'    => [ 'blade.php' ],
 					'addReferences' => $this->location,
 				];
+				require 'BladeGettextExtractor.php';
 				BladeCodeExtractor::fromDirectory( $this->source, $translations, $options );
 			}
 
